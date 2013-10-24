@@ -1,0 +1,25 @@
+/**
+* @file
+* This composition does...
+*
+* @copyright Copyright © 2013 [mnstri](https://vuo.org/user/92)
+* @see This is a Vuo Composition source code file.  See http://vuo.org for further information.
+*/
+
+digraph G
+{
+Append [type="vuo.text.append" version="1.0.0" label="Append|<refresh>refresh\l|<texts>texts\l|<done>done\r|<compositeText>compositeText\r" pos="-5,411"];
+ConvertIntegerToText [type="vuo.type.integer.text" version="1.0.0" label="Convert Integer to Text|<refresh>refresh\l|<integer>integer\l|<done>done\r|<text>text\r" pos="50,336"];
+CountWithinRange [type="vuo.math.countWithinRange.integer" version="1.0.0" label="Count within Range|<refresh>refresh\l|<increment>increment\l|<decrement>decrement\l|<minimum>minimum\l|<maximum>maximum\l|<wrapMode>wrapMode\l|<done>done\r|<count>count\r" pos="-484,481" _increment="1" _decrement="1" _minimum="1" _maximum="220" _wrapMode="\"wrap\""];
+FirePeriodically [type="vuo.time.firePeriodically" version="1.0.0" label="Fire Periodically|<refresh>refresh\l|<seconds>seconds\l|<done>done\r|<fired>fired\r" pos="-702,486" _seconds="0.040000"];
+GetImage [type="vuo.image.get" version="1.0.0" label="Get Image|<refresh>refresh\l|<imageURL>imageURL\l|<done>done\r|<image>image\r" pos="192,395"];
+MakeList6 [type="vuo.list.make.3.VuoText" version="1.0.0" label="Make List|<refresh>refresh\l|<item1>item1\l|<item2>item2\l|<item3>item3\l|<done>done\r|<list>list\r" pos="-69,422" _item1="\"file:\\/\\/\\/Users\\/monsteri\\/Code\\/Git\\/MnstriVuoExamples\\/compositions\\/0_4_9_tests\\/seq\\/img_\"" _item3="\".jpg\""];
+RenderImageToWindow [type="vuo.image.render.window" version="1.0.0" label="Render Image to Window|<refresh>refresh\l|<image>image\l|<done>done\r" pos="349,395"];
+
+Append:compositeText -> GetImage:imageURL;
+ConvertIntegerToText:text -> MakeList6:item2;
+CountWithinRange:count -> ConvertIntegerToText:integer;
+FirePeriodically:fired -> CountWithinRange:increment;
+GetImage:image -> RenderImageToWindow:image;
+MakeList6:list -> Append:texts;
+}

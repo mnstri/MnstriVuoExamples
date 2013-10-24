@@ -1,0 +1,36 @@
+/**
+* @file
+* This composition does...
+*
+* @copyright Copyright © 2013 [mnstri](https://vuo.org/user/92)
+* @see This is a Vuo Composition source code file.  See http://vuo.org for further information.
+*/
+
+digraph G
+{
+FireOnStart [type="vuo.event.fireOnStart" version="1.0.0" label="Fire on Start|<refresh>refresh\l|<done>done\r|<started>started\r" pos="-910,257"];
+FirePeriodically [type="vuo.time.firePeriodically" version="1.0.0" label="Fire Periodically|<refresh>refresh\l|<seconds>seconds\l|<done>done\r|<fired>fired\r" pos="-880,177" _seconds="0.040000"];
+GetImage [type="vuo.image.get" version="1.0.0" label="Get Image|<refresh>refresh\l|<imageURL>imageURL\l|<done>done\r|<image>image\r" pos="-571,424" _imageURL="\"http:\\/\\/vuo.org\\/sites\\/all\\/themes\\/vuo_theme\\/logo.png\""];
+Make3DObjectFromImage [type="vuo.scene.make.image" version="1.0.0" label="Make 3D Object from Image|<refresh>refresh\l|<image>image\l|<center>center\l|<rotation>rotation\l|<width>width\l|<done>done\r|<object>object\r" pos="-170,163" fillcolor="cyan" _rotation="{\"x\":0,\"y\":0,\"z\":0}" _width="4.000000"];
+Make3DObjectFromImage2 [type="vuo.scene.make.image" version="1.0.0" label="Make 3D Object from Image|<refresh>refresh\l|<image>image\l|<center>center\l|<rotation>rotation\l|<width>width\l|<done>done\r|<object>object\r" pos="207,345" fillcolor="green" _center="{\"x\":0,\"y\":0,\"z\":0}" _rotation="{\"x\":0,\"y\":0,\"z\":0}" _width="2.000000"];
+Make3DPoint [type="vuo.point.make.3d" version="1.0.0" label="Make 3D Point|<refresh>refresh\l|<x>x\l|<y>y\l|<z>z\l|<done>done\r|<point>point\r" pos="-503,197" _x="1.000000" _y="0" _z="0"];
+MakeList3 [type="vuo.list.make.1.VuoSceneObject" version="1.0.0" label="Make List|<refresh>refresh\l|<item1>item1\l|<done>done\r|<list>list\r" pos="501,336"];
+MakeList4 [type="vuo.list.make.1.VuoSceneObject" version="1.0.0" label="Make List|<refresh>refresh\l|<item1>item1\l|<done>done\r|<list>list\r" pos="125,172" fillcolor="cyan"];
+RenderSceneToImage [type="vuo.scene.render.image" version="1.0.0" label="Render Scene to Image|<refresh>refresh\l|<objects>objects\l|<width>width\l|<height>height\l|<done>done\r|<image>image\r" pos="221,161" fillcolor="cyan" _width="1024" _height="768"];
+RenderSceneToWindow [type="vuo.scene.render.window" version="1.0.0" label="Render Scene to Window|<refresh>refresh\l|<objects>objects\l|<done>done\r|<requestedFrame>requestedFrame\r" pos="565,325"];
+SelectInput [type="vuo.select.in.2.VuoImage" version="1.0.0" label="Select Original/Cropped|<refresh>refresh\l|<which>which\l|<option1>option1\l|<option2>option2\l|<done>done\r|<out>out\r" pos="-194,352" fillcolor="magenta" _which="2"];
+
+FireOnStart:started -> GetImage:refresh;
+FirePeriodically:fired -> Make3DObjectFromImage:refresh;
+FirePeriodically:fired -> Make3DPoint:refresh;
+FirePeriodically:fired -> SelectInput:refresh;
+GetImage:image -> Make3DObjectFromImage:image;
+GetImage:image -> SelectInput:option1;
+Make3DObjectFromImage2:object -> MakeList3:item1;
+Make3DObjectFromImage:object -> MakeList4:item1;
+Make3DPoint:point -> Make3DObjectFromImage:center;
+MakeList3:list -> RenderSceneToWindow:objects;
+MakeList4:list -> RenderSceneToImage:objects;
+RenderSceneToImage:image -> SelectInput:option2;
+SelectInput:out -> Make3DObjectFromImage2:image;
+}
