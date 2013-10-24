@@ -14,20 +14,13 @@ ConvertBooleanToInteger4 [type="vuo.type.boolean.integer" version="1.0.0" label=
 ConvertBooleanToInteger5 [type="vuo.type.boolean.integer" version="1.0.0" label="Convert Boolean to Integer|<refresh>refresh\l|<boolean>boolean\l|<done>done\r|<integer>integer\r" pos="104,1296"];
 ConvertIntegerToBoolean2 [type="vuo.type.integer.boolean" version="1.0.0" label="Convert Integer to Boolean|<refresh>refresh\l|<integer>integer\l|<done>done\r|<boolean>boolean\r" pos="-136,454"];
 ConvertIntegerToBoolean6 [type="vuo.type.integer.boolean" version="1.0.0" label="Convert Integer to Boolean|<refresh>refresh\l|<integer>integer\l|<done>done\r|<boolean>boolean\r" pos="-738,1107"];
-ConvertIntegerToRealNumber [type="vuo.type.integer.real" version="1.0.0" label="Convert Integer to Real Number|<refresh>refresh\l|<integer>integer\l|<done>done\r|<real>real\r" pos="1049,1201"];
 Count [type="vuo.math.count.real" version="1.0.0" label="Count|<refresh>refresh\l|<increment>increment\l|<decrement>decrement\l|<done>done\r|<count>count\r" pos="-420,362" fillcolor="magenta" _increment="0.010000" _decrement="0.010000"];
 Count2 [type="vuo.math.count.integer" version="1.0.0" label="Count|<refresh>refresh\l|<increment>increment\l|<decrement>decrement\l|<done>done\r|<count>count\r" pos="-25,519" fillcolor="magenta"];
 Count3 [type="vuo.math.count.integer" version="1.0.0" label="Count|<refresh>refresh\l|<increment>increment\l|<decrement>decrement\l|<done>done\r|<count>count\r" pos="29,1159" fillcolor="violet"];
 Count4 [type="vuo.math.count.real" version="1.0.0" label="Count|<refresh>refresh\l|<increment>increment\l|<decrement>decrement\l|<done>done\r|<count>count\r" pos="-583,1060" fillcolor="violet" _increment="0.010000" _decrement="0.010000"];
 DiscardDataFromEvent3 [type="vuo.type.frameRequest.event" version="1.0.0" label="Discard Data from Event|<refresh>refresh\l|<dataAndEvent>dataAndEvent\l|<done>done\r|<event>event\r" pos="-1241,784" fillcolor="yellow"];
-DisplayConsoleWindow [type="vuo.console.window" version="1.0.0" label="Display Console Window|<refresh>refresh\l|<lineToWrite>lineToWrite\l|<done>done\r|<typedLine>typedLine\r|<typedWord>typedWord\r|<typedCharacter>typedCharacter\r" pos="1436,985" _lineToWrite="\"\""];
-Divide [type="vuo.math.divide.real" version="1.0.0" label="Divide|<refresh>refresh\l|<a>a\l|<b>b\l|<done>done\r|<quotient>quotient\r|<remainder>remainder\r" pos="952,1052"];
 FireOnStart [type="vuo.event.fireOnStart" version="1.0.0" label="Fire on Start|<refresh>refresh\l|<done>done\r|<started>started\r" pos="461,389" fillcolor="cyan"];
-FirePeriodically [type="vuo.time.firePeriodically" version="1.0.0" label="Fire Periodically|<refresh>refresh\l|<seconds>seconds\l|<done>done\r|<fired>fired\r" pos="732,1133" _seconds="0.100000"];
-GetFrameRequestCount [type="vuo.scene.frameRequest.get.frameCount" version="1.0.0" label="Get Frame Request Count|<refresh>refresh\l|<frameRequest>frameRequest\l|<done>done\r|<frameCount>frameCount\r" pos="561,1039"];
-GetFrameRequestTimestamp [type="vuo.scene.frameRequest.get.timestamp" version="1.0.0" label="Get Frame Request Timestamp|<refresh>refresh\l|<frameRequest>frameRequest\l|<done>done\r|<timestamp>timestamp\r" pos="670,978"];
 HoldValue [type="vuo.hold.VuoReal" version="1.0.0" label="Hold Value|<refresh>refresh\l|<initialValue>initialValue\l|<newValue>newValue\l|<done>done\r|<heldValue>heldValue\r" pos="-163,314" fillcolor="magenta" _initialValue="0.000000"];
-HoldValue2 [type="vuo.hold.VuoReal" version="1.0.0" label="Hold Value|<refresh>refresh\l|<initialValue>initialValue\l|<newValue>newValue\l|<done>done\r|<heldValue>heldValue\r" pos="1171,1072" _initialValue="0.000000"];
 HoldValue3 [type="vuo.hold.VuoReal" version="1.0.0" label="Hold Value|<refresh>refresh\l|<initialValue>initialValue\l|<newValue>newValue\l|<done>done\r|<heldValue>heldValue\r" pos="-180,717" fillcolor="magenta" _initialValue="0.000000"];
 HoldValue4 [type="vuo.hold.VuoReal" version="1.0.0" label="Hold Value|<refresh>refresh\l|<initialValue>initialValue\l|<newValue>newValue\l|<done>done\r|<heldValue>heldValue\r" pos="-109,954" fillcolor="violet" _initialValue="0.000000"];
 HoldValue5 [type="vuo.hold.VuoReal" version="1.0.0" label="Hold Value|<refresh>refresh\l|<initialValue>initialValue\l|<newValue>newValue\l|<done>done\r|<heldValue>heldValue\r" pos="-126,1357" fillcolor="violet" _initialValue="0.000000"];
@@ -46,16 +39,8 @@ MakeList2 [type="vuo.list.make.2.VuoSceneObject" version="1.0.0" label="Make Lis
 MakeSphereVertices [type="vuo.vertices.make.sphere" version="1.0.0" label="Make Sphere Vertices|<refresh>refresh\l|<rows>rows\l|<columns>columns\l|<done>done\r|<vertices>vertices\r" pos="732,409" fillcolor="cyan" _rows="16" _columns="16"];
 MakeTransform [type="vuo.transform.make" version="1.0.0" label="Make Transform|<refresh>refresh\l|<translation>translation\l|<rotation>rotation\l|<scale>scale\l|<done>done\r|<transform>transform\r" pos="923,661" fillcolor="cyan" _rotation="{\"x\":0,\"y\":0,\"z\":0}"];
 RenderSceneToWindow [type="vuo.scene.render.window" version="1.0.0" label="Render Scene to Window|<refresh>refresh\l|<objects>objects\l|<done>done\r|<requestedFrame>requestedFrame\r" pos="1462,546" fillcolor="cyan"];
-SelectLatest2 [type="vuo.select.latest.2.VuoReal" version="1.0.0" label="Select Latest|<refresh>refresh\l|<option1>option1\l|<option2>option2\l|<done>done\r|<latest>latest\r" pos="1252,1234" _option1="0" _option2="0"];
 SelectOutput [type="vuo.select.out.event" version="1.0.0" label="Select Output|<refresh>refresh\l|<which>which\l|<in>in\l|<done>done\r|<falseOption>falseOption\r|<trueOption>trueOption\r" pos="-746,362" fillcolor="magenta"];
 SelectOutput5 [type="vuo.select.out.event" version="1.0.0" label="Select Output|<refresh>refresh\l|<which>which\l|<in>in\l|<done>done\r|<falseOption>falseOption\r|<trueOption>trueOption\r" pos="-831,1082" fillcolor="violet"];
-
-
-
-
-
-
-
 
 ConvertBooleanToInteger2:integer -> Count2:increment;
 ConvertBooleanToInteger3:integer -> Count2:decrement;
@@ -63,7 +48,6 @@ ConvertBooleanToInteger4:integer -> Count3:increment;
 ConvertBooleanToInteger5:integer -> Count3:decrement;
 ConvertIntegerToBoolean2:boolean -> SelectOutput:which;
 ConvertIntegerToBoolean6:boolean -> SelectOutput5:which;
-ConvertIntegerToRealNumber:real -> Divide:a;
 Count2:count -> ConvertIntegerToBoolean2:integer;
 Count3:count -> ConvertIntegerToBoolean6:integer;
 Count4:count -> HoldValue4:newValue;
@@ -78,11 +62,8 @@ Count:count -> IsLessThan:a;
 Count:count -> Make3DPoint:x;
 DiscardDataFromEvent3:event -> SelectOutput5:in;
 DiscardDataFromEvent3:event -> SelectOutput:in;
-Divide:quotient -> HoldValue2:newValue;
 FireOnStart:started -> Make3DPoint2:refresh;
 FireOnStart:started -> MakeSphereVertices:refresh;
-GetFrameRequestCount:frameCount -> ConvertIntegerToRealNumber:integer;
-GetFrameRequestTimestamp:timestamp -> Divide:b;
 HoldValue3:heldValue -> IsLessThan2:a;
 HoldValue4:heldValue -> IsGreaterThan7:a;
 HoldValue5:heldValue -> IsLessThan3:a;
@@ -102,8 +83,6 @@ MakeList2:list -> RenderSceneToWindow:objects;
 MakeSphereVertices:vertices -> Make3DObject:vertices;
 MakeTransform:transform -> Make3DObject:transform;
 RenderSceneToWindow:requestedFrame -> DiscardDataFromEvent3:dataAndEvent;
-RenderSceneToWindow:requestedFrame -> GetFrameRequestCount:frameRequest;
-RenderSceneToWindow:requestedFrame -> GetFrameRequestTimestamp:frameRequest;
 SelectOutput5:falseOption -> Count4:increment;
 SelectOutput5:trueOption -> Count4:decrement;
 SelectOutput:falseOption -> Count:increment;
