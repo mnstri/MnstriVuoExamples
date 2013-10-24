@@ -6,7 +6,7 @@
   <li>Launch/relaunch Vuo</li>
 </ol>
 ##List of Nodes
-Most of these nodes will probably become obsolete quite soon as Vuo gets updated, but for now they are a good workaround.
+These nodes are very basic but still quite useful. Most of them will probably become obsolete quite soon as Vuo gets updated, but for now they are a good workaround.
 ###mnstri.math.absolute
 Outputs the absolute value of the input value.
 ###mnstri.math.distanceBetweenPoints3D
