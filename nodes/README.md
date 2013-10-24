@@ -9,8 +9,12 @@
 These nodes are very basic but still quite useful. Most of them will probably become obsolete quite soon as Vuo gets updated, but for now they are a good workaround.
 ###mnstri.math.absolute
 Outputs the absolute value of the input value.
+###mnstri.math.bpmToSeconds
+Converts a BPM (Beats Per Minute) value to a number you can feed to the Fire Periodically node.
 ###mnstri.math.distanceBetweenPoints3D
 Calculates the distance between two points.
+###mnstri.math.fpsToSeconds
+Converts an FPS (Frames Per Second) value to a number you can feed to the Fire Periodically node.
 ###mnstri.math.modulo
 Modulo. Outputs the remainder of a division between the two input values.
 ###mnstri.math.sinCosTan
