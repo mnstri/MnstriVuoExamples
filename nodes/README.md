@@ -1,9 +1,9 @@
-#Custom nodes for Vuo by Månsteri
+#Custom Nodes for Vuo by Månsteri
 ##Installation instructions
 <ol>
-<li>Download the nodes by cloning the repository or downloading the .zip from the sidebar.</li>
-<li>Copy the contents of this folder (nodes/) to: ~/Library/Application Support/Vuo/Modules/</li>
-<li>Launch/relaunch Vuo</li>
+  <li>Download the nodes by cloning the repository or downloading the .zip from the sidebar.</li>
+  <li>Copy the contents of this folder (nodes/) to: ~/Library/Application Support/Vuo/Modules/</li>
+  <li>Launch/relaunch Vuo</li>
 </ol>
 ##List of Nodes
 Most of these nodes will probably become obsolete quite soon as Vuo gets updated, but for now they are a good workaround.
@@ -21,5 +21,7 @@ Splits an input value (color) to multiple outputs. Useful for controlling your d
 Splits an input value (image) to multiple outputs. Useful for controlling your dataflow. Like the input splitter in QC.
 ###mnstri.utility.inputSplitter.integer
 Splits an input value (integer) to multiple outputs. Useful for controlling your dataflow. Like the input splitter in QC.
+###mnstri.utility.inputSplitter.point3d
+Splits an input value (3D Point) to multiple outputs. Useful for controlling your dataflow. Like the input splitter in QC.
 ###mnstri.utility.inputSplitter.real
 Splits an input value (real) to multiple outputs. Useful for controlling your dataflow. Like the input splitter in QC.
