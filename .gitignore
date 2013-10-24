@@ -1,5 +1,3 @@
 *.user
 build-*
 compositions-devel
-nodes
-nodes-source
