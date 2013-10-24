@@ -12,7 +12,7 @@ VuoModuleMetadata({
                      "title" : "Absolute",
                      "description" : "Absolute",
                      "keywords" : [ "math", "absolute", "abs", "modulus" ],
-                     "version" : "1.0.0",
+                     "version" : "1.0.1",
                      "node": {
                          "isInterface" : false
                      }
@@ -24,5 +24,5 @@ void nodeEvent
         VuoOutputData(VuoReal) absoluteValue
 )
 {
-    *absoluteValue = abs(inputValue);
+    *absoluteValue = fabs(inputValue);
 }
