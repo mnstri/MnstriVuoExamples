@@ -1,10 +1,9 @@
 /**
  * @file
- * test.vuoize node implementation.
+ * mnstri.math.distanceBetweenPoints3D node implementation.
  *
- * @copyright Copyright © 2012–2013 Kosada Incorporated.
+ * @copyright Copyright © 2012–2013 Månsteri.
  * This code may be modified and distributed under the terms of the MIT License.
- * For more information, see http://vuo.org/license.
  */
 
 #include "node.h"
