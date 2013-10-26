@@ -1,4 +1,8 @@
-##Custom Nodes for Vuo by Månsteri
+##compositions
+Some example compositions.
+
+## nodes
+Somevery simple nodes for Vuo.
 ###Installation instructions
 <ol>
   <li>Download the nodes by cloning the repository or downloading the .zip from the sidebar.</li>
@@ -29,3 +33,6 @@ Splits an input value (integer) to multiple outputs. Useful for controlling your
 Splits an input value (3D Point) to multiple outputs. Useful for controlling your dataflow. Like the input splitter in QC.
 ####mnstri.utility.inputSplitter.real
 Splits an input value (real) to multiple outputs. Useful for controlling your dataflow. Like the input splitter in QC.
+
+##source-for-nodes
+The source code for the nodes.
