@@ -1,0 +1,55 @@
+/**
+* @file
+* This composition does...
+*
+* @copyright Copyright © 2013 [mnstri](https://vuo.org/user/92)
+* @see This is a Vuo Composition source code file.  See http://vuo.org for further information.
+*/
+
+digraph G
+{
+FireOnStart [type="vuo.event.fireOnStart" version="1.0.0" label="Fire on Start|<refresh>refresh\l|<done>done\r|<started>started\r" pos="-360,69"];
+GetImage [type="vuo.image.get" version="1.0.0" label="Get Image|<refresh>refresh\l|<imageURL>imageURL\l|<done>done\r|<image>image\r" pos="-70,482" fillcolor="magenta" _imageURL="\"http:\\/\\/mansteri.com\\/images\\/vuo\\/top.png\""];
+GetImage2 [type="vuo.image.get" version="1.0.0" label="Get Image|<refresh>refresh\l|<imageURL>imageURL\l|<done>done\r|<image>image\r" pos="-32,242" fillcolor="violet" _imageURL="\"http:\\/\\/mansteri.com\\/images\\/vuo\\/bottom.png\""];
+Make3DObject [type="vuo.scene.make" version="1.0.0" label="Make 3D Object|<refresh>refresh\l|<vertices>vertices\l|<shader>shader\l|<transform>transform\l|<done>done\r|<object>object\r" pos="941,43" fillcolor="orange"];
+Make3DObjectFromImage [type="vuo.scene.make.image" version="1.0.0" label="Make 3D Object from Image|<refresh>refresh\l|<image>image\l|<center>center\l|<rotation>rotation\l|<width>width\l|<done>done\r|<object>object\r" pos="480,487" fillcolor="magenta" _center="{\"x\":0,\"y\":0,\"z\":0}" _rotation="{\"x\":0,\"y\":0,\"z\":0}" _width="1.000000"];
+Make3DObjectFromImage2 [type="vuo.scene.make.image" version="1.0.0" label="Make 3D Object from Image|<refresh>refresh\l|<image>image\l|<center>center\l|<rotation>rotation\l|<width>width\l|<done>done\r|<object>object\r" pos="529,247" fillcolor="violet" _rotation="{\"x\":0,\"y\":0,\"z\":0}" _width="1.000000"];
+Make3DPoint [type="vuo.point.make.3d" version="1.0.0" label="Make 3D Point|<refresh>refresh\l|<x>x\l|<y>y\l|<z>z\l|<done>done\r|<point>point\r" pos="20,354" fillcolor="violet" _x="-0.300000" _y="-0.200000" _z="0"];
+Make3DPoint2 [type="vuo.point.make.3d" version="1.0.0" label="Make 3D Point|<refresh>refresh\l|<x>x\l|<y>y\l|<z>z\l|<done>done\r|<point>point\r" pos="383,120" fillcolor="orange" _x="2.000000" _y="2.000000" _z="2.000000"];
+MakeList2 [type="vuo.list.make.3.VuoSceneObject" version="1.0.0" label="Make List|<refresh>refresh\l|<item1>item1\l|<item2>item2\l|<item3>item3\l|<done>done\r|<list>list\r" pos="1223,277" fillcolor="green"];
+MakeList4 [type="vuo.list.make.3.VuoSceneObject" version="1.0.0" label="Make List|<refresh>refresh\l|<item1>item1\l|<item2>item2\l|<item3>item3\l|<done>done\r|<list>list\r" pos="1210,108" fillcolor="green"];
+MakeSquareVertices [type="vuo.vertices.make.square" version="1.0.0" label="Make Square Vertices|<refresh>refresh\l|<done>done\r|<vertices>vertices\r" pos="498,-35" fillcolor="orange"];
+MakeTransform [type="vuo.transform.make" version="1.0.0" label="Make Transform|<refresh>refresh\l|<translation>translation\l|<rotation>rotation\l|<scale>scale\l|<done>done\r|<transform>transform\r" pos="707,90" fillcolor="orange" _translation="{\"x\":0,\"y\":0,\"z\":0}" _rotation="{\"x\":0,\"y\":0,\"z\":0}"];
+RenderImageToWindow [type="vuo.image.render.window" version="1.0.0" label="Render Image to Window|<refresh>refresh\l|<image>image\l|<done>done\r" pos="1564,97" fillcolor="green"];
+RenderSceneToImage [type="vuo.scene.render.image" version="1.0.0" label="Render Scene to Image|<refresh>refresh\l|<objects>objects\l|<width>width\l|<height>height\l|<done>done\r|<image>image\r" pos="1306,97" fillcolor="green" _width="1024" _height="768"];
+RenderSceneToWindow [type="vuo.scene.render.window" version="1.0.0" label="Render Scene to Window|<refresh>refresh\l|<objects>objects\l|<done>done\r|<requestedFrame>requestedFrame\r|<movedMouseTo>movedMouseTo\r|<scrolledMouse>scrolledMouse\r|<usedMouseButton>usedMouseButton\r" pos="1287,266" fillcolor="green"];
+ShadeWithSolidColor [type="vuo.shader.make.color" version="1.0.0" label="Shade with Solid Color|<refresh>refresh\l|<color>color\l|<done>done\r|<shader>shader\r" pos="428,26" fillcolor="orange" _color="{\"r\":1.000000,\"g\":0.217578,\"b\":0.473869,\"a\":1.000000}"];
+
+
+
+
+
+
+FireOnStart:started -> GetImage2:refresh;
+FireOnStart:started -> GetImage:refresh;
+FireOnStart:started -> Make3DPoint2:refresh;
+FireOnStart:started -> Make3DPoint:refresh;
+FireOnStart:started -> MakeSquareVertices:refresh;
+FireOnStart:started -> ShadeWithSolidColor:refresh;
+GetImage2:image -> Make3DObjectFromImage2:image;
+GetImage:image -> Make3DObjectFromImage:image;
+Make3DObject:object -> MakeList2:item3;
+Make3DObject:object -> MakeList4:item1;
+Make3DObjectFromImage2:object -> MakeList2:item2;
+Make3DObjectFromImage2:object -> MakeList4:item2;
+Make3DObjectFromImage:object -> MakeList2:item1;
+Make3DObjectFromImage:object -> MakeList4:item3;
+Make3DPoint2:point -> MakeTransform:scale;
+Make3DPoint:point -> Make3DObjectFromImage2:center;
+MakeList2:list -> RenderSceneToWindow:objects;
+MakeList4:list -> RenderSceneToImage:objects;
+MakeSquareVertices:vertices -> Make3DObject:vertices;
+MakeTransform:transform -> Make3DObject:transform;
+RenderSceneToImage:image -> RenderImageToWindow:image;
+ShadeWithSolidColor:shader -> Make3DObject:shader;
+}
