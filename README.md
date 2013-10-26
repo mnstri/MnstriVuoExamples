@@ -2,7 +2,7 @@
 Some example compositions.
 
 ## nodes
-Somevery simple nodes for Vuo.
+Some very simple nodes for Vuo.
 ###Installation instructions
 <ol>
   <li>Download the nodes by cloning the repository or downloading the .zip from the sidebar.</li>
