@@ -8,22 +8,21 @@
 
 digraph G
 {
-CountWithinRange [type="vuo.math.countWithinRange.real" version="1.0.0" label="Count within Range|<refresh>refresh\l|<increment>increment\l|<decrement>decrement\l|<setCount>setCount\l|<minimum>minimum\l|<maximum>maximum\l|<wrapMode>wrapMode\l|<done>done\r|<count>count\r" pos="-645,268" fillcolor="cyan" _increment="0.100000" _decrement="1" _setCount="0" _minimum="0" _maximum="360.000000" _wrapMode="\"wrap\""];
+CountWithinRange [type="vuo.math.countWithinRange.real" version="1.0.0" label="Count within Range|<refresh>refresh\l|<increment>increment\l|<decrement>decrement\l|<setCount>setCount\l|<minimum>minimum\l|<maximum>maximum\l|<wrapMode>wrapMode\l|<done>done\r|<count>count\r" pos="-613,260" fillcolor="cyan" _increment="0.100000" _decrement="1" _setCount="0" _minimum="0" _maximum="360.000000" _wrapMode="\"wrap\""];
 FireOnStart [type="vuo.event.fireOnStart" version="1.0.0" label="Fire on Start|<refresh>refresh\l|<done>done\r|<started>started\r" pos="-977,314"];
 FirePeriodically [type="vuo.time.firePeriodically" version="1.0.0" label="Fire Periodically|<refresh>refresh\l|<seconds>seconds\l|<done>done\r|<fired>fired\r" pos="-968,88" _seconds="0.008300"];
 GetImage2 [type="vuo.image.get" version="1.0.0" label="Get Image|<refresh>refresh\l|<imageURL>imageURL\l|<done>done\r|<image>image\r" pos="-444,633" fillcolor="magenta" _imageURL="\"http:\\/\\/mansteri.com\\/images\\/vuo\\/cube_wood_top.png\""];
 GetImage3 [type="vuo.image.get" version="1.0.0" label="Get Image|<refresh>refresh\l|<imageURL>imageURL\l|<done>done\r|<image>image\r" pos="-447,552" fillcolor="magenta" _imageURL="\"http:\\/\\/mansteri.com\\/images\\/vuo\\/cube_wood_side.png\""];
-GetImage5 [type="vuo.image.get" version="1.0.0" label="Get Image|<refresh>refresh\l|<imageURL>imageURL\l|<done>done\r|<image>image\r" pos="-456,746" fillcolor="violet" _imageURL="\"http:\\/\\/mansteri.com\\/images\\/vuo\\/vignette.png\""];
+GetImage5 [type="vuo.image.get" version="1.0.0" label="Get Image|<refresh>refresh\l|<imageURL>imageURL\l|<done>done\r|<image>image\r" pos="-455,744" fillcolor="violet" _imageURL="\"http:\\/\\/mansteri.com\\/images\\/vuo\\/vignette.png\""];
 Make3DObject2 [type="vuo.scene.make" version="1.0.0" label="Make 3D Object|<refresh>refresh\l|<vertices>vertices\l|<shader>shader\l|<transform>transform\l|<done>done\r|<object>object\r" pos="164,-16" fillcolor="orange"];
 Make3DObjectFromImage [type="vuo.scene.make.image" version="1.0.0" label="Make 3D Object from Image|<refresh>refresh\l|<image>image\l|<center>center\l|<rotation>rotation\l|<width>width\l|<done>done\r|<object>object\r" pos="-261,743" fillcolor="violet" _center="{\"x\":0,\"y\":0,\"z\":0}" _rotation="{\"x\":0,\"y\":0,\"z\":0}" _width="2.000000"];
-Make3DPoint [type="vuo.point.make.3d" version="1.0.0" label="Make 3D Point|<refresh>refresh\l|<x>x\l|<y>y\l|<z>z\l|<done>done\r|<point>point\r" pos="-357,378" fillcolor="cyan" _x="0.500000" _y="0.500000" _z="0.500000"];
 Make3DPoint2 [type="vuo.point.make.3d" version="1.0.0" label="Make 3D Point|<refresh>refresh\l|<x>x\l|<y>y\l|<z>z\l|<done>done\r|<point>point\r" pos="-377,106" fillcolor="orange" _x="2.000000" _y="2.000000" _z="2.000000"];
-Make3DPoint3 [type="vuo.point.make.3d" version="1.0.0" label="Make 3D Point|<refresh>refresh\l|<x>x\l|<y>y\l|<z>z\l|<done>done\r|<point>point\r" pos="-361,264" fillcolor="cyan" _z="0.500000"];
+Make3DPoint3 [type="vuo.point.make.3d" version="1.0.0" label="Make 3D Point|<refresh>refresh\l|<x>x\l|<y>y\l|<z>z\l|<done>done\r|<point>point\r" pos="-365,290" fillcolor="cyan" _z="0.500000"];
 MakeCube [type="vuo.scene.make.cube" version="1.0.0" label="Make Cube|<refresh>refresh\l|<transform>transform\l|<frontShader>frontShader\l|<leftShader>leftShader\l|<rightShader>rightShader\l|<backShader>backShader\l|<topShader>topShader\l|<bottomShader>bottomShader\l|<done>done\r|<cube>cube\r" pos="160,546" fillcolor="magenta"];
 MakeList4 [type="vuo.list.make.3.VuoSceneObject" version="1.0.0" label="Make List|<refresh>refresh\l|<item1>item1\l|<item2>item2\l|<item3>item3\l|<done>done\r|<list>list\r" pos="421,584" fillcolor="green"];
 MakeSquareVertices [type="vuo.vertices.make.square" version="1.0.0" label="Make Square Vertices|<refresh>refresh\l|<done>done\r|<vertices>vertices\r" pos="-354,-34" fillcolor="orange"];
 MakeTransform [type="vuo.transform.make" version="1.0.0" label="Make Transform|<refresh>refresh\l|<translation>translation\l|<rotation>rotation\l|<scale>scale\l|<done>done\r|<transform>transform\r" pos="-145,98" fillcolor="orange" _translation="{\"x\":0,\"y\":0,\"z\":0}" _rotation="{\"x\":0,\"y\":0,\"z\":0}"];
-MakeTransform2 [type="vuo.transform.make" version="1.0.0" label="Make Transform|<refresh>refresh\l|<translation>translation\l|<rotation>rotation\l|<scale>scale\l|<done>done\r|<transform>transform\r" pos="-116,275" fillcolor="cyan" _translation="{\"x\":0,\"y\":0,\"z\":0}"];
+MakeTransform2 [type="vuo.transform.make" version="1.0.0" label="Make Transform|<refresh>refresh\l|<translation>translation\l|<rotation>rotation\l|<scale>scale\l|<done>done\r|<transform>transform\r" pos="-116,275" fillcolor="cyan" _translation="{\"x\":0,\"y\":0,\"z\":0}" _scale="{\"x\":0.500000,\"y\":0.500000,\"z\":0.500000}"];
 RenderImageToWindow [type="vuo.image.render.window" version="1.0.0" label="Render Image to Window|<refresh>refresh\l|<image>image\l|<done>done\r" pos="755,573" fillcolor="green"];
 RenderSceneToImage [type="vuo.scene.render.image" version="1.0.0" label="Render Scene to Image|<refresh>refresh\l|<objects>objects\l|<width>width\l|<height>height\l|<done>done\r|<image>image\r" pos="517,573" fillcolor="green" _width="1280" _height="720"];
 ShadeWithImage [type="vuo.shader.make.image" version="1.0.0" label="Shade with Image|<refresh>refresh\l|<image>image\l|<done>done\r|<shader>shader\r" pos="-256,634" fillcolor="magenta"];
@@ -49,8 +48,6 @@ FireOnStart:started -> MakeCube:refresh;
 FireOnStart:started -> MakeSquareVertices:refresh;
 FirePeriodically:fired -> CountWithinRange:increment;
 FirePeriodically:fired -> Make3DPoint2:refresh;
-FirePeriodically:fired -> Make3DPoint3:refresh;
-FirePeriodically:fired -> Make3DPoint:refresh;
 FirePeriodically:fired -> ShadeWithSolidColor:refresh;
 GetImage2:image -> ShadeWithImage:image;
 GetImage3:image -> ShadeWithImage3:image;
@@ -59,7 +56,6 @@ Make3DObject2:object -> MakeList4:item1;
 Make3DObjectFromImage:object -> MakeList4:item3;
 Make3DPoint2:point -> MakeTransform:scale;
 Make3DPoint3:point -> MakeTransform2:rotation;
-Make3DPoint:point -> MakeTransform2:scale;
 MakeCube:cube -> MakeList4:item2;
 MakeList4:list -> RenderSceneToImage:objects;
 MakeSquareVertices:vertices -> Make3DObject2:vertices;
