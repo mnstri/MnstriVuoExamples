@@ -1,0 +1,51 @@
+/**
+* @file
+* This composition does...
+*
+* @copyright Copyright © 2013 [mnstri](https://vuo.org/user/92)
+* @see This is a Vuo Composition source code file.  See http://vuo.org for further information.
+*/
+
+digraph G
+{
+FireOnStart [type="vuo.event.fireOnStart" version="1.0.0" label="Fire on Start|<refresh>refresh\l|<done>done\r|<started>started\r" pos="-327,111"];
+GetFrameRequestTimestamp2 [type="vuo.scene.frameRequest.get.timestamp" version="1.0.0" label="Get Frame Request Timestamp|<refresh>refresh\l|<frameRequest>frameRequest\l|<done>done\r|<timestamp>timestamp\r" pos="626,531"];
+Make3DObject [type="vuo.scene.make" version="1.0.0" label="Make 3D Object|<refresh>refresh\l|<vertices>vertices\l|<shader>shader\l|<transform>transform\l|<done>done\r|<object>object\r" pos="424,186"];
+Make3DPoint [type="vuo.point.make.3d" version="1.0.0" label="Make 3D Point|<refresh>refresh\l|<x>x\l|<y>y\l|<z>z\l|<done>done\r|<point>point\r" pos="11,251" _z="0"];
+Make3DPoint2 [type="vuo.point.make.3d" version="1.0.0" label="Make 3D Point|<refresh>refresh\l|<x>x\l|<y>y\l|<z>z\l|<done>done\r|<point>point\r" pos="10,338" _x="0.100000" _y="0.100000" _z="0.100000"];
+MakeList2 [type="vuo.list.make.2.VuoSceneObject" version="1.0.0" label="Make List|<refresh>refresh\l|<item1>item1\l|<item2>item2\l|<done>done\r|<list>list\r" pos="617,196" _item2=""];
+MakeList3 [type="vuo.list.make.2.VuoReal" version="1.0.0" label="Make List|<refresh>refresh\l|<item1>item1\l|<item2>item2\l|<done>done\r|<list>list\r" pos="-251,234" _item2="0.500000"];
+MakeList4 [type="vuo.list.make.2.VuoReal" version="1.0.0" label="Make List|<refresh>refresh\l|<item1>item1\l|<item2>item2\l|<done>done\r|<list>list\r" pos="-249,316" _item2="0.500000"];
+MakeSphereVertices [type="vuo.vertices.make.sphere" version="1.0.0" label="Make Sphere Vertices|<refresh>refresh\l|<rows>rows\l|<columns>columns\l|<done>done\r|<vertices>vertices\r" pos="117,97" _rows="16" _columns="16"];
+MakeTransform [type="vuo.transform.make" version="1.0.0" label="Make Transform|<refresh>refresh\l|<translation>translation\l|<rotation>rotation\l|<scale>scale\l|<done>done\r|<transform>transform\r" pos="230,251" _rotation="{\"x\":0,\"y\":0,\"z\":0}"];
+Multiply [type="vuo.math.multiply.real" version="1.0.0" label="Multiply|<refresh>refresh\l|<terms>terms\l|<done>done\r|<product>product\r" pos="-187,223"];
+Multiply2 [type="vuo.math.multiply.real" version="1.0.0" label="Multiply|<refresh>refresh\l|<terms>terms\l|<done>done\r|<product>product\r" pos="-185,305"];
+RenderSceneToWindow [type="vuo.scene.render.window" version="1.0.0" label="Render Scene to Window|<refresh>refresh\l|<objects>objects\l|<done>done\r|<requestedFrame>requestedFrame\r|<movedMouseTo>movedMouseTo\r|<scrolledMouse>scrolledMouse\r|<usedMouseButton>usedMouseButton\r" pos="681,185"];
+ShadeWithNormalColors [type="vuo.shader.make.normal" version="1.0.0" label="Shade with Normal Colors|<refresh>refresh\l|<done>done\r|<shader>shader\r" pos="93,182"];
+SinCosTan [type="mnstri.math.sinCosTan" version="1.0.0" label="Sin Cos Tan|<refresh>refresh\l|<input>input\l|<done>done\r|<s>s\r|<c>c\r|<t>t\r" pos="-468,251" fillcolor="magenta"];
+
+
+
+
+
+
+
+FireOnStart:started -> Make3DPoint2:refresh;
+FireOnStart:started -> MakeSphereVertices:refresh;
+FireOnStart:started -> ShadeWithNormalColors:refresh;
+GetFrameRequestTimestamp2:timestamp -> SinCosTan:input;
+Make3DObject:object -> MakeList2:item1;
+Make3DPoint2:point -> MakeTransform:scale;
+Make3DPoint:point -> MakeTransform:translation;
+MakeList2:list -> RenderSceneToWindow:objects;
+MakeList3:list -> Multiply:terms;
+MakeList4:list -> Multiply2:terms;
+MakeSphereVertices:vertices -> Make3DObject:vertices;
+MakeTransform:transform -> Make3DObject:transform;
+Multiply2:product -> Make3DPoint:y;
+Multiply:product -> Make3DPoint:x;
+RenderSceneToWindow:requestedFrame -> GetFrameRequestTimestamp2:frameRequest;
+ShadeWithNormalColors:shader -> Make3DObject:shader;
+SinCosTan:c -> MakeList4:item1;
+SinCosTan:s -> MakeList3:item1;
+}
