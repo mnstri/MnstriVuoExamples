@@ -6,7 +6,7 @@ Some very simple nodes for Vuo.
 ###Installation instructions
 <ol>
   <li>Download the nodes by cloning the repository or downloading the .zip from the sidebar.</li>
-  <li>Copy the contents of this folder (nodes/) to: ~/Library/Application Support/Vuo/Modules/</li>
+  <li>Copy the contents of the nodes/ folder to: ~/Library/Application Support/Vuo/Modules/</li>
   <li>Launch/relaunch Vuo</li>
 </ol>
 ###List of Nodes
