@@ -1,0 +1,32 @@
+/**
+* @file
+* This composition does...
+*
+* @copyright Copyright © 2013 [mnstri](https://vuo.org/user/92)
+* @see This is a Vuo Composition source code file.  See http://vuo.org for further information.
+*/
+
+digraph G
+{
+FireOnStart [type="vuo.event.fireOnStart" version="1.0.0" label="Fire on Start|<refresh>refresh\l|<done>done\r|<started>started\r" pos="-345,268"];
+GLSLVignetteImageFilter [type="mnstri.glsl.vignette" version="1.0.0" label="GLSL Vignette Image Filter|<refresh>refresh\l|<image>image\l|<innerRadius>innerRadius\l|<outerRadius>outerRadius\l|<done>done\r|<adjustedImage>adjustedImage\r" pos="690,286" _innerRadius="0.000000" _outerRadius="1.000000"];
+Make3DObject [type="vuo.scene.make" version="1.0.0" label="Make 3D Object|<refresh>refresh\l|<vertices>vertices\l|<shader>shader\l|<transform>transform\l|<done>done\r|<object>object\r" pos="157,287"];
+MakeList5 [type="vuo.list.make.1.VuoSceneObject" version="1.0.0" label="Make List|<refresh>refresh\l|<item1>item1\l|<done>done\r|<list>list\r" pos="334,297"];
+MakeSquareVertices [type="vuo.vertices.make.square" version="1.0.0" label="Make Square Vertices|<refresh>refresh\l|<done>done\r|<vertices>vertices\r" pos="-124,287"];
+MakeTransform [type="vuo.transform.make" version="1.0.0" label="Make Transform|<refresh>refresh\l|<translation>translation\l|<rotation>rotation\l|<scale>scale\l|<done>done\r|<transform>transform\r" pos="-123,430" _translation="{\"x\":0,\"y\":0,\"z\":0}" _rotation="{\"x\":0,\"y\":0,\"z\":0}" _scale="{\"x\":2.000000,\"y\":2.000000,\"z\":1.000000}"];
+RenderImageToWindow [type="vuo.image.render.window" version="1.0.0" label="Render Image to Window|<refresh>refresh\l|<image>image\l|<done>done\r" pos="962,286"];
+RenderSceneToImage2 [type="vuo.scene.render.image" version="1.0.0" label="Render Scene to Image|<refresh>refresh\l|<objects>objects\l|<width>width\l|<height>height\l|<done>done\r|<image>image\r" pos="430,286" _width="1024" _height="768"];
+ShadeWithSolidColor [type="vuo.shader.make.color" version="1.0.0" label="Shade with Solid Color|<refresh>refresh\l|<color>color\l|<done>done\r|<shader>shader\r" pos="-134,344" _color="{\"r\":0.476295,\"g\":0.764813,\"b\":0.130098,\"a\":1.000000}"];
+
+
+FireOnStart:started -> MakeSquareVertices:refresh;
+FireOnStart:started -> MakeTransform:refresh;
+FireOnStart:started -> ShadeWithSolidColor:refresh;
+GLSLVignetteImageFilter:adjustedImage -> RenderImageToWindow:image;
+Make3DObject:object -> MakeList5:item1;
+MakeList5:list -> RenderSceneToImage2:objects;
+MakeSquareVertices:vertices -> Make3DObject:vertices;
+MakeTransform:transform -> Make3DObject:transform;
+RenderSceneToImage2:image -> GLSLVignetteImageFilter:image;
+ShadeWithSolidColor:shader -> Make3DObject:shader;
+}
