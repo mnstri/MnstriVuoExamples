@@ -11,6 +11,8 @@ Some very simple nodes for Vuo.
 </ol>
 ###List of Nodes
 These nodes are very basic but still quite useful. Most of them will probably become obsolete quite soon as Vuo gets updated, but for now they are a good workaround.
+###mnstri.glsl.vignette.vuonode
+A simple GLSL filter that creates a vignette effect.
 ####mnstri.math.absolute
 Outputs the absolute value of the input value.
 ####mnstri.math.bpmToSeconds
