@@ -45,6 +45,7 @@ static const char * fragmentShaderSource = VUOSHADER_GLSL_SOURCE(120,
 struct nodeInstanceData
 {
     VuoShader shader;
+    VuoGlContext glContext;
     VuoImageRenderer imageRenderer;
 };
 
@@ -53,9 +54,12 @@ struct nodeInstanceData * nodeInstanceInit(void)
     struct nodeInstanceData * instance = (struct nodeInstanceData *)malloc(sizeof(struct nodeInstanceData));
     VuoRegister(instance, free);
 
+    instance->glContext = VuoGlContext_use();
+
     instance->shader = VuoShader_make("Mnstri Vignette", VuoShader_getDefaultVertexShader(), fragmentShaderSource);
     VuoRetain(instance->shader);
-    instance->imageRenderer = VuoImageRenderer_make();
+
+    instance->imageRenderer = VuoImageRenderer_make(instance->glContext);
     VuoRetain(instance->imageRenderer);
 
     return instance;
@@ -75,11 +79,11 @@ void nodeInstanceEvent
 
     // Associate the input image with the shader.
     VuoShader_resetTextures((*instance)->shader);
-    VuoShader_addTexture((*instance)->shader, image, "texture");
+    VuoShader_addTexture((*instance)->shader, (*instance)->glContext, "texture", image);
 
     // Feed parameters to the shader.
-    VuoShader_setUniformFloat((*instance)->shader, "innerRadius", innerRadius);
-    VuoShader_setUniformFloat((*instance)->shader, "outerRadius", outerRadius);
+    VuoShader_setUniformFloat((*instance)->shader, (*instance)->glContext, "innerRadius", innerRadius);
+    VuoShader_setUniformFloat((*instance)->shader, (*instance)->glContext, "outerRadius", outerRadius);
 
     // Render.
     *adjustedImage = VuoImageRenderer_draw((*instance)->imageRenderer, (*instance)->shader, image->pixelsWide, image->pixelsHigh);
@@ -89,4 +93,5 @@ void nodeInstanceFini(VuoInstanceData(struct nodeInstanceData *) instance)
 {
     VuoRelease((*instance)->shader);
     VuoRelease((*instance)->imageRenderer);
+    VuoGlContext_disuse((*instance)->glContext);
 }
