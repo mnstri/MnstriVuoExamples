@@ -20,7 +20,7 @@ A simple GLSL filter that creates a mirror effect. The mirrorMode has 6 modes.
 * 4 = mirror bottom
 * 5 = quad mirror
 
-###mnstri.glsl.vignette.vuonode
+####mnstri.glsl.vignette.vuonode
 A simple GLSL filter that creates a vignette effect.
 ####mnstri.math.absolute
 Outputs the absolute value of the input value.
