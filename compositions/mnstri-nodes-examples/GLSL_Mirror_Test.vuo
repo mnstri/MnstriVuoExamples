@@ -10,19 +10,15 @@ digraph G
 {
 ConvertIntegerToRealNumber [type="vuo.type.integer.real" version="1.0.0" label="Convert Integer to Real Number|<refresh>refresh\l|<integer>integer\l|<done>done\r|<real>real\r" pos="410,443"];
 ConvertIntegerToRealNumber2 [type="vuo.type.integer.real" version="1.0.0" label="Convert Integer to Real Number|<refresh>refresh\l|<integer>integer\l|<done>done\r|<real>real\r" pos="410,458"];
-DiscardDataFromEvent [type="vuo.type.discardData.VuoReal" version="1.0.0" label="Discard Data from Event|<refresh>refresh\l|<dataAndEvent>dataAndEvent\l|<done>done\r|<event>event\r" pos="330,211"];
-FireOnDisplayRefresh [type="vuo.event.fireOnDisplayRefresh" version="1.0.0" label="Fire on Display Refresh|<refresh>refresh\l|<done>done\r|<requestedFrame>requestedFrame\r" pos="-485,154" _requestedFrame_eventThrottling="drop"];
 FireOnStart [type="vuo.event.fireOnStart" version="1.0.0" label="Fire on Start|<refresh>refresh\l|<done>done\r|<started>started\r" pos="-513,54" _started_eventThrottling="enqueue"];
 GetImageSize [type="vuo.image.get.size" version="1.0.0" label="Get Image Size|<refresh>refresh\l|<image>image\l|<done>done\r|<width>width\r|<height>height\r" pos="-259,222"];
 Make2DPoint [type="vuo.point.make.VuoPoint2d" version="1.0.0" label="Make 2D Point|<refresh>refresh\l|<x>x\l|<y>y\l|<done>done\r|<point>point\r" pos="-12,224"];
 Mirror [type="mnstri.glsl.mirror" version="1.0.0" label="Mirror|<refresh>refresh\l|<image>image\l|<mirrorMode>mirrorMode\l|<resolution>resolution\l|<done>done\r|<adjustedImage>adjustedImage\r" pos="175,172" _mirrorMode="5"];
 PlayMovie [type="vuo.movie.play" version="1.0.0" label="Play Movie|<refresh>refresh\l|<movieURL>movieURL\l|<play>play\l|<pause>pause\l|<loop>loop\l|<playbackRate>playbackRate\l|<setTime>setTime\l|<done>done\r|<decodedImage>decodedImage\r" pos="-191,-16" fillcolor="yellow" _movieURL="\"\\/System\\/Library\\/Compositions\\/Sunset.mov\"" _loop="\"loop\"" _playbackRate="1.000000" _setTime="\"\"" _decodedImage_eventThrottling="drop"];
-RenderImageToWindow2 [type="vuo.image.render.window" version="1.0.0" label="Render Image to Window|<refresh>refresh\l|<image>image\l|<done>done\r|<showedWindow>showedWindow\r|<requestedFrame>requestedFrame\r" pos="340,173" _showedWindow_eventThrottling="enqueue" _requestedFrame_eventThrottling="drop"];
+RenderImageToWindow2 [type="vuo.image.render.window" version="1.0.0" label="Render Image to Window|<refresh>refresh\l|<image>image\l|<done>done\r|<showedWindow>showedWindow\r|<requestedFrame>requestedFrame\r" pos="479,167" _showedWindow_eventThrottling="enqueue" _requestedFrame_eventThrottling="drop"];
 
 ConvertIntegerToRealNumber2:real -> Make2DPoint:y;
 ConvertIntegerToRealNumber:real -> Make2DPoint:x;
-DiscardDataFromEvent:event -> Mirror:refresh;
-FireOnDisplayRefresh:requestedFrame -> DiscardDataFromEvent:dataAndEvent;
 FireOnStart:started -> PlayMovie:play;
 GetImageSize:height -> ConvertIntegerToRealNumber2:integer;
 GetImageSize:width -> ConvertIntegerToRealNumber:integer;
