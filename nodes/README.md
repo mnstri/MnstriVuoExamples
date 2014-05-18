@@ -6,28 +6,19 @@
   <li>Launch/relaunch Vuo</li>
 </ol>
 ##List of Nodes
-These nodes are very basic but still quite useful. Most of them will probably become obsolete quite soon as Vuo gets updated, but for now they are a good workaround.
-###mnstri.glsl.vignette.vuonode
+A lot of the nodes I had originally made are now obsolete, as they have been added to Vuo as built-in features. You can find the old nodes in the deprecated folder.
+###mnstri.glsl.mirror.vuonode
+A simple GLSL filter that creates a mirror effect. The mirrorMode has 6 modes.
+* 0 = bypass
+* 1 = mirror left side
+* 2 = mirror right side
+* 3 = mirror top
+* 4 = mirror bottom
+* 5 = quad mirror
+
+##mnstri.glsl.vignette.vuonode
 A simple GLSL filter that creates a vignette effect.
 ###mnstri.math.absolute
 Outputs the absolute value of the input value.
-###mnstri.math.bpmToSeconds
-Converts a BPM (Beats Per Minute) value to a number you can feed to the Fire Periodically node.
-###mnstri.math.distanceBetweenPoints3D
-Calculates the distance between two points.
 ###mnstri.math.fpsToSeconds
 Converts an FPS (Frames Per Second) value to a number you can feed to the Fire Periodically node.
-###mnstri.math.modulo
-Modulo. Outputs the remainder of a division between the two input values.
-###mnstri.math.sinCosTan
-Outputs the sine, cosine and tanget of the input value.
-###mnstri.utility.inputSplitter.color
-Splits an input value (color) to multiple outputs. Useful for controlling your dataflow. Like the input splitter in QC.
-###mnstri.utility.inputSplitter.image
-Splits an input value (image) to multiple outputs. Useful for controlling your dataflow. Like the input splitter in QC.
-###mnstri.utility.inputSplitter.integer
-Splits an input value (integer) to multiple outputs. Useful for controlling your dataflow. Like the input splitter in QC.
-###mnstri.utility.inputSplitter.point3d
-Splits an input value (3D Point) to multiple outputs. Useful for controlling your dataflow. Like the input splitter in QC.
-###mnstri.utility.inputSplitter.real
-Splits an input value (real) to multiple outputs. Useful for controlling your dataflow. Like the input splitter in QC.
