@@ -35,7 +35,7 @@ static const char * fragmentShaderSource = VUOSHADER_GLSL_SOURCE(120,
 
 	void main()
 	{
-		vec4 frag = texture2D(texture, fragmentTextureCoordinate.xy);
+        //vec4 frag = texture2D(texture, fragmentTextureCoordinate.xy);
 
         vec2 p = gl_FragCoord.xy/resolution.xy;
 
@@ -102,7 +102,7 @@ void nodeInstanceEvent
 		VuoInstanceData(struct nodeInstanceData *) instance,
 		VuoInputData(VuoImage) image,
         VuoInputData(VuoInteger, {"default":1,"suggestedMin":0,"suggestedMax":5,"suggestedStep":1}) mirrorMode,
-        VuoInputData(VuoPoint2d, {"default":{"x":512.0,"y":512.0},"suggestedStep":{"x":1.0,"y":1.0}}) resolution,
+        //VuoInputData(VuoPoint2d, {"default":{"x":512.0,"y":512.0},"suggestedStep":{"x":1.0,"y":1.0}}) resolution,
 
 		VuoOutputData(VuoImage) adjustedImage
 )
@@ -116,7 +116,8 @@ void nodeInstanceEvent
 
 	// Feed parameters to the shader.
     VuoShader_setUniformFloat((*instance)->shader, (*instance)->glContext, "mirrorMode", mirrorMode);
-    VuoShader_setUniformPoint2d((*instance)->shader, (*instance)->glContext, "resolution", resolution);
+    //VuoShader_setUniformPoint2d((*instance)->shader, (*instance)->glContext, "resolution", resolution);
+    VuoShader_setUniformPoint2d((*instance)->shader, (*instance)->glContext, "resolution", VuoPoint2d_make(image->pixelsWide, image->pixelsHigh));
     //VuoShader_setUniformFloat((*instance)->shader, (*instance)->glContext, "green", green);
     //VuoShader_setUniformFloat((*instance)->shader, (*instance)->glContext, "blue", blue);
 
