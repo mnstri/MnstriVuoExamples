@@ -1,0 +1,35 @@
+/**
+* @file
+* This composition does...
+*
+* @copyright Copyright © 2014 [mnstri](https://vuo.org/user/92)
+* @see This is a Vuo Composition source code file.  See http://vuo.org for further information.
+*/
+
+digraph G
+{
+FireOnStart [type="vuo.event.fireOnStart" version="1.0.0" label="Fire on Start|<refresh>refresh\l|<done>done\r|<started>started\r" pos="-131,20" _started_eventThrottling="enqueue"];
+HoldValue2 [type="vuo.hold.VuoLayer" version="1.0.0" label="Hold Value|<refresh>refresh\l|<initialValue>initialValue\l|<newValue>newValue\l|<done>done\r|<heldValue>heldValue\r" pos="588,244" _initialValue=""];
+MakeList [type="vuo.list.make.2.VuoLayer" version="1.0.0" label="Make List|<refresh>refresh\l|<item1>item1\l|<item2>item2\l|<done>done\r|<list>list\r" pos="694,75"];
+MakeList2 [type="vuo.list.make.2.VuoReal" version="1.0.0" label="Make List|<refresh>refresh\l|<item1>item1\l|<item2>item2\l|<done>done\r|<list>list\r" pos="22,300" _item2="80.000000"];
+MakeScaledLayer [type="vuo.layer.make" version="1.0.0" label="Make Scaled Layer|<refresh>refresh\l|<name>name\l|<image>image\l|<center>center\l|<rotation>rotation\l|<width>width\l|<alpha>alpha\l|<done>done\r|<layer>layer\r" pos="352,32" _name="" _center="{\"x\":0.000000,\"y\":0.000000}" _width="4.000000" _alpha="1.000000"];
+MakeScaledLayer2 [type="vuo.layer.make" version="1.0.0" label="Make Scaled Layer|<refresh>refresh\l|<name>name\l|<image>image\l|<center>center\l|<rotation>rotation\l|<width>width\l|<alpha>alpha\l|<done>done\r|<layer>layer\r" pos="398,259" _name="" _center="{\"x\":0.000000,\"y\":0.000000}" _width="1.900000" _alpha="1.000000"];
+Multiply [type="vuo.math.multiply.VuoReal" version="1.0.0" label="Multiply|<refresh>refresh\l|<terms>terms\l|<done>done\r|<product>product\r" pos="85,289"];
+PlayMovie [type="vuo.movie.play" version="1.0.0" label="Play Movie|<refresh>refresh\l|<movieURL>movieURL\l|<play>play\l|<pause>pause\l|<loop>loop\l|<playbackRate>playbackRate\l|<setTime>setTime\l|<done>done\r|<decodedImage>decodedImage\r" pos="113,43" fillcolor="yellow" _movieURL="\"\\/System\\/Library\\/Compositions\\/Sunset.mov\"" _loop="\"loop\"" _playbackRate="1.000000" _setTime="\"\"" _decodedImage_eventThrottling="drop"];
+RenderImageToWindow2 [type="vuo.image.render.window" version="1.0.0" label="Render Image to Window|<refresh>refresh\l|<image>image\l|<done>done\r|<showedWindow>showedWindow\r|<requestedFrame>requestedFrame\r" pos="983,64" _showedWindow_eventThrottling="enqueue" _requestedFrame_eventThrottling="drop"];
+RenderLayersToImage [type="vuo.layer.render.image" version="1.0.0" label="Render Layers to Image|<refresh>refresh\l|<layers>layers\l|<width>width\l|<height>height\l|<done>done\r|<image>image\r|<renderedLayers>renderedLayers\r" pos="784,64" _width="1024" _height="768"];
+
+FireOnStart:started -> PlayMovie:play;
+HoldValue2:heldValue -> MakeList:item2;
+MakeList2:list -> Multiply:terms;
+MakeList:list -> RenderLayersToImage:layers;
+MakeScaledLayer2:layer -> HoldValue2:newValue;
+MakeScaledLayer:layer -> MakeList:item1;
+Multiply:done -> HoldValue2:refresh;
+Multiply:product -> MakeScaledLayer2:rotation;
+Multiply:product -> MakeScaledLayer:rotation;
+PlayMovie:decodedImage -> MakeScaledLayer:image;
+RenderImageToWindow2:requestedFrame -> MakeList2:item1;
+RenderLayersToImage:image -> MakeScaledLayer2:image;
+RenderLayersToImage:image -> RenderImageToWindow2:image;
+}
