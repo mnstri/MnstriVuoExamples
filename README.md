@@ -22,8 +22,6 @@ A simple GLSL filter that creates a mirror effect. The mirrorMode has 6 modes.
 
 ####mnstri.glsl.vignette.vuonode
 A simple GLSL filter that creates a vignette effect.
-####mnstri.math.absolute
-Outputs the absolute value of the input value.
 ####mnstri.math.fpsToSeconds
 Converts an FPS (Frames Per Second) value to a number you can feed to the Fire Periodically node.
 
